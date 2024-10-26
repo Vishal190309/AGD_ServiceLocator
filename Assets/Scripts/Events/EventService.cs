@@ -9,26 +9,14 @@ using UnityEngine;
 
 namespace ServiceLocator.Events
 {
-    public class EventService : MonoBehaviour
+    public class EventService : GenericMonoSingleton<EventService>
     {
         public GameEventController<int> OnMapSelected { get; private set; }
 
-        public static EventService Instance { get { return instance; } }
-        private static EventService instance;
 
-     
-
-        private void Awake()
+        protected override void Awake()
         {
-            if (instance == null)
-            {
-                instance = this;
-            }
-            else
-            {
-                Destroy(instance);
-                Debug.Log("Destroyed Second Instance of Event Service");
-            }
+            base.Awake();
             OnMapSelected = new GameEventController<int>();
         }
         

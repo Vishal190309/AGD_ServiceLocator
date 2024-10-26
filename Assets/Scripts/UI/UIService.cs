@@ -7,10 +7,11 @@ using ServiceLocator.Events;
 using ServiceLocator.Wave;
 using ServiceLocator.Player;
 using ServiceLocator.Map;
+using ServiceLocator.Sound;
 
 namespace ServiceLocator.UI
 {
-    public class UIService : MonoBehaviour
+    public class UIService : GenericMonoSingleton<UIService>
     {
 
         [Header("Gameplay Panel")]
@@ -38,21 +39,7 @@ namespace ServiceLocator.UI
         [SerializeField] private Button playAgainButton;
         [SerializeField] private Button quitButton;
 
-        public static UIService Instance { get { return instance; } }
-        private static UIService instance;
-
-        private void Awake()
-        {
-            if (instance == null)
-            {
-                instance = this;
-            }
-            else
-            {
-                Destroy(instance);
-                Debug.Log("Destroyed Second Instance of UI Service");
-            }
-        }
+      
 
         private void Start()
         {
