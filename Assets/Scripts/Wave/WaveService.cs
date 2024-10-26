@@ -20,7 +20,7 @@ namespace ServiceLocator.Wave
         private List<WaveData> waveDatas;
         private List<BloonController> activeBloons;
 
-        public static WaveService Instance { get { return Instance; } }
+        public static WaveService Instance { get { return instance; } }
         private static WaveService instance;
 
         private void Awake()
@@ -44,7 +44,7 @@ namespace ServiceLocator.Wave
 
         private void InitializeBloons()
         {
-            bloonPool = new BloonPool( this, waveScriptableObject);
+            bloonPool = new BloonPool( waveScriptableObject);
             activeBloons = new List<BloonController>();
         }
 

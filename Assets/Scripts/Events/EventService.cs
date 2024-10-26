@@ -13,7 +13,7 @@ namespace ServiceLocator.Events
     {
         public GameEventController<int> OnMapSelected { get; private set; }
 
-        public static EventService Instance { get { return Instance; } }
+        public static EventService Instance { get { return instance; } }
         private static EventService instance;
 
      

@@ -14,7 +14,7 @@ namespace ServiceLocator.Player
 
         private ProjectilePool projectilePool;
 
-        public static PlayerService Instance { get { return Instance; } }
+        public static PlayerService Instance { get { return instance; } }
         private static PlayerService instance;
 
         private List<MonkeyController> activeMonkeys;
