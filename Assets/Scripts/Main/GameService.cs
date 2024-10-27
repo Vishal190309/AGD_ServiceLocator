@@ -52,7 +52,7 @@ namespace ServiceLocator.Main
             PlayerService.Init(UIService, MapService, SoundService);
             MapService.Init(EventService);
             WaveService.Init(EventService,MapService, SoundService,UIService);
-            UIService.Init(EventService);
+            UIService.Init(EventService,WaveService);
         }
 
         private void Update()
