@@ -41,7 +41,6 @@ namespace ServiceLocator.Main
         private void CreteServices()
         {
             EventService = new EventService();
-            UIService.SubscribeToEvents();
             MapService = new MapService(mapScriptableObject);
             WaveService = new WaveService(waveScriptableObject);
             SoundService = new SoundService(soundScriptableObject, SFXSource, BGSource);
@@ -51,6 +50,9 @@ namespace ServiceLocator.Main
         private void InjectDependency()
         {
             PlayerService.Init(UIService, MapService, SoundService);
+            MapService.Init(EventService);
+            WaveService.Init(EventService,MapService, SoundService,UIService);
+            UIService.Init(EventService);
         }
 
         private void Update()

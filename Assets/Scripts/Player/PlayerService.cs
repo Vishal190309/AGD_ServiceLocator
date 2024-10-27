@@ -139,7 +139,7 @@ namespace ServiceLocator.Player
         private void DeductMoney(int moneyToDedecut)
         {
             Money -= moneyToDedecut;
-            GameService.Instance.UIService.UpdateMoneyUI(Money);
+            uIService.UpdateMoneyUI(Money);
         }
 
         public void GetReward(int reward)
