@@ -23,6 +23,7 @@ namespace ServiceLocator.UI
         [Header("Level Selection Panel")]
         [SerializeField] private GameObject levelSelectionPanel;
         [SerializeField] private Button Map1Button;
+        [SerializeField] private MapButton mapButton;
 
         [Header("Monkey Selection UI")]
         private MonkeySelectionUIController monkeySelectionController;
@@ -54,6 +55,7 @@ namespace ServiceLocator.UI
             MonkeySelectionPanel.SetActive(false);
             monkeySelectionController.SetActive(false);
 
+            mapButton.Init(eventService);
             gameplayPanel.SetActive(false);
             levelSelectionPanel.SetActive(true);
             gameEndPanel.SetActive(false);
